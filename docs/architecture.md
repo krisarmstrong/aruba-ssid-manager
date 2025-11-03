@@ -66,7 +66,6 @@ Configuration Completion / Error Handling
 - **src/aruba_ssid_configurator/configurator.py**: Core SSH configuration logic and logging helpers
 - **src/aruba_ssid_configurator/cli.py**: Argument parsing and command-line orchestration
 - **src/aruba_ssid_configurator/__main__.py**: Enables `python -m aruba_ssid_configurator`
-- **version_bumper.py**: Utility for semantic versioning
 
 ## SSH Communication Protocol
 
@@ -130,10 +129,9 @@ Prompts user for each parameter sequentially. Activated with `--interactive` fla
 
 ## Version Management
 
-The project uses semantic versioning (MAJOR.MINOR.PATCH) managed by:
-- `__version__` constant in main module
-- `version_bumper.py` for automated version updates
-- Git tags for release tracking
+Semantic versioning (MAJOR.MINOR.PATCH) is tracked via:
+- `__version__` constant exposed from `aruba_ssid_configurator.configurator`
+- Git commit history and annotated tags for each release
 
 ## Security Considerations
 
