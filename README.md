@@ -10,19 +10,29 @@
 
 ## Installation
 ```bash
-pip install pexpect
+pip install -e .
 ```
 
 ## Usage
 ### CLI Mode
 ```bash
-python aruba_ssid_configurator.py --host 10.0.0.1 --username admin --password pass \
+aruba-ssid-configurator --host 10.0.0.1 --username admin --password pass \
   --ssid MySSID --vlan 10 --wlan-profile MyProfile --hidden
 ```
 
 ### Interactive Mode
 ```bash
-python aruba_ssid_configurator.py --interactive
+python -m aruba_ssid_configurator --interactive
+```
+
+## Repository Layout
+```
+docs/                      Reference documentation
+scripts/                   Automation helpers (smoke tests)
+src/aruba_ssid_configurator/   Library and CLI implementation
+tests/                     Pytest suite (uses src/ layout)
+CHANGELOG.md               Release history
+pyproject.toml             Packaging metadata
 ```
 
 ## License

@@ -5,6 +5,8 @@ Version Bumper - Generic project versioning tool
 Scans source files in a project for semantic version strings and bumps
 the major, minor, or patch segment. Optionally commits and tags via Git.
 
+Author: Kris Armstrong
+
 Usage:
   version_bumper.py [options]
 
@@ -124,3 +126,4 @@ def main():
         logging.info("No version string found or no change needed.")
 
 if __name__ == '__main__':
+    main()
