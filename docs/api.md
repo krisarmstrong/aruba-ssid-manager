@@ -1,6 +1,6 @@
 # API Reference
 
-## Module: aruba_ssid_configurator
+## Module: aruba_ssid_manager
 
 ### Functions
 
@@ -17,7 +17,7 @@ Configure logging to output to console and optional file.
 
 **Example:**
 ```python
-from aruba_ssid_configurator import setup_logging
+from aruba_ssid_manager import setup_logging
 
 setup_logging(verbose=True, logfile="/var/log/aruba_config.log")
 ```
@@ -49,7 +49,7 @@ Parse command-line arguments for the application.
 
 **Example:**
 ```python
-from aruba_ssid_configurator import parse_arguments
+from aruba_ssid_manager import parse_arguments
 
 args = parse_arguments()
 print(f"Connecting to {args.host} as {args.username}")
@@ -88,7 +88,7 @@ Prompt user for parameters in interactive mode.
 
 **Example:**
 ```python
-from aruba_ssid_configurator import interactive_input
+from aruba_ssid_manager import interactive_input
 
 params = interactive_input()
 # User is prompted for each parameter
@@ -130,7 +130,7 @@ Connect via SSH and configure the specified SSID.
 
 **Example:**
 ```python
-from aruba_ssid_configurator import configure_ssid
+from aruba_ssid_manager import configure_ssid
 
 params = {
     'host': '192.168.1.1',
@@ -182,7 +182,7 @@ Main entrypoint for the application.
 
 **Example:**
 ```python
-from aruba_ssid_configurator import main
+from aruba_ssid_manager import main
 
 if __name__ == "__main__":
     main()
@@ -197,7 +197,7 @@ if __name__ == "__main__":
 Semantic version string for the application.
 
 **Type:** `str`
-**Value:** `"1.1.0"`
+**Value:** `"1.2.0"`
 **Usage:** Reference in version checking and automated version updates
 
 ---
@@ -207,7 +207,7 @@ Semantic version string for the application.
 ### Example 1: Full CLI Mode
 
 ```bash
-aruba-ssid-configurator \
+aruba-ssid-manager \
   --host 192.168.1.1 \
   --username admin \
   --password MyPassword \
@@ -222,13 +222,13 @@ aruba-ssid-configurator \
 ### Example 2: Interactive Mode
 
 ```bash
-aruba-ssid-configurator --interactive
+aruba-ssid-manager --interactive
 ```
 
 ### Example 3: Programmatic Usage
 
 ```python
-from aruba_ssid_configurator import setup_logging, configure_ssid
+from aruba_ssid_manager import setup_logging, configure_ssid
 
 setup_logging(verbose=True)
 
@@ -264,7 +264,7 @@ Raised when:
 **Handling:**
 ```python
 import pexpect
-from aruba_ssid_configurator import configure_ssid
+from aruba_ssid_manager import configure_ssid
 
 try:
     configure_ssid(params)

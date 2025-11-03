@@ -1,4 +1,4 @@
-# Contributing to Aruba SSID Configurator
+# Contributing to Aruba SSID Manager
 
 We welcome contributions!
 

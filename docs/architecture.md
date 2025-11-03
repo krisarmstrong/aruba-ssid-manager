@@ -2,13 +2,13 @@
 
 ## Overview
 
-Aruba SSID Configurator is a Python 3 command-line utility designed to programmatically configure visible or hidden SSIDs on Aruba wireless controllers via SSH. The architecture emphasizes clarity, type safety, and structured logging.
+Aruba SSID Manager is a Python 3 command-line utility designed to programmatically configure visible or hidden SSIDs on Aruba wireless controllers via SSH. The architecture emphasizes clarity, type safety, and structured logging.
 
 ## System Design
 
 ### Core Components
 
-1. **Argument Parser** (`aruba_ssid_configurator.cli.parse_arguments`)
+1. **Argument Parser** (`aruba_ssid_manager.cli.parse_arguments`)
    - Handles command-line argument parsing using Python's `argparse` module
    - Supports both full CLI argument mode and interactive mode
    - Returns a parsed `argparse.Namespace` object with user inputs
@@ -30,7 +30,7 @@ Aruba SSID Configurator is a Python 3 command-line utility designed to programma
    - Sequences Aruba CLI commands to configure SSID
    - Handles both visible and hidden SSID configurations
 
-5. **Main Orchestrator** (`aruba_ssid_configurator.cli.main`)
+5. **Main Orchestrator** (`aruba_ssid_manager.cli.main`)
    - Entry point for the application and console script
    - Determines execution mode (CLI vs. interactive)
    - Orchestrates workflow from argument parsing to configuration
@@ -63,9 +63,9 @@ Configuration Completion / Error Handling
 - **getpass**: Secure password input (Python stdlib)
 
 ### Internal Modules
-- **src/aruba_ssid_configurator/configurator.py**: Core SSH configuration logic and logging helpers
-- **src/aruba_ssid_configurator/cli.py**: Argument parsing and command-line orchestration
-- **src/aruba_ssid_configurator/__main__.py**: Enables `python -m aruba_ssid_configurator`
+- **src/aruba_ssid_manager/configurator.py**: Core SSH configuration logic and logging helpers
+- **src/aruba_ssid_manager/cli.py**: Argument parsing and command-line orchestration
+- **src/aruba_ssid_manager/__main__.py**: Enables `python -m aruba_ssid_manager`
 
 ## SSH Communication Protocol
 
@@ -130,7 +130,7 @@ Prompts user for each parameter sequentially. Activated with `--interactive` fla
 ## Version Management
 
 Semantic versioning (MAJOR.MINOR.PATCH) is tracked via:
-- `__version__` constant exposed from `aruba_ssid_configurator.configurator`
+- `__version__` constant exposed from `aruba_ssid_manager.configurator`
 - Git commit history and annotated tags for each release
 
 ## Security Considerations

@@ -1,6 +1,6 @@
-# Aruba SSID Configurator
+# Aruba SSID Manager
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE) [![PyPI](https://img.shields.io/pypi/v/aruba-ssid-configurator)]() [![Python](https://img.shields.io/pypi/pyversions/aruba-ssid-configurator)]()
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE) [![PyPI](https://img.shields.io/pypi/v/aruba-ssid-manager)]() [![Python](https://img.shields.io/pypi/pyversions/aruba-ssid-manager)]()
 
 **Configure visible or hidden SSIDs on an Aruba controller via SSH.**
 
@@ -16,20 +16,20 @@ pip install -e .
 ## Usage
 ### CLI Mode
 ```bash
-aruba-ssid-configurator --host 10.0.0.1 --username admin --password pass \
+aruba-ssid-manager --host 10.0.0.1 --username admin --password pass \
   --ssid MySSID --vlan 10 --wlan-profile MyProfile --hidden
 ```
 
 ### Interactive Mode
 ```bash
-python -m aruba_ssid_configurator --interactive
+python -m aruba_ssid_manager --interactive
 ```
 
 ## Repository Layout
 ```
 docs/                      Reference documentation
 scripts/                   Automation helpers (smoke tests)
-src/aruba_ssid_configurator/   Library and CLI implementation
+src/aruba_ssid_manager/    Library and CLI implementation
 tests/                     Pytest suite (uses src/ layout)
 CHANGELOG.md               Release history
 pyproject.toml             Packaging metadata

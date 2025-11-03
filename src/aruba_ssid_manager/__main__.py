@@ -1,4 +1,4 @@
-"""Allow ``python -m aruba_ssid_configurator`` execution."""
+"""Allow ``python -m aruba_ssid_manager`` execution."""
 
 from .cli import main
 

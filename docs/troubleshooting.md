@@ -82,11 +82,11 @@ ERROR - pexpect.exceptions.ExceptionPexpect: ... Permission denied
    If password contains special characters:
    ```bash
    # Use interactive mode (more secure)
-   aruba-ssid-configurator --interactive
+   aruba-ssid-manager --interactive
 
    # Or properly escape in script
    PASSWORD='my$pass!word'
-   aruba-ssid-configurator --password "$PASSWORD" ...
+   aruba-ssid-manager --password "$PASSWORD" ...
    ```
 
 4. **Check SSH Key-Based Auth** (if using keys)
@@ -144,7 +144,7 @@ ERROR - pexpect.exceptions.TIMEOUT: Timeout exceeded in read_nonblocking()
    ```
 
 5. **Increase Timeout (Code Modification)**
-   Edit `aruba-ssid-configurator`, line 99:
+   Edit `aruba-ssid-manager`, line 99:
    ```python
    session = pexpect.spawn(..., timeout=60)  # Increase from 30 to 60
    ```
@@ -226,12 +226,12 @@ ERROR - Failed to execute command or received unexpected prompt
 
 2. **Test with Verbose Flag**
    ```bash
-   aruba-ssid-configurator --interactive --verbose
+   aruba-ssid-manager --interactive --verbose
    ```
 
 3. **Write to Current Directory First**
    ```bash
-   aruba-ssid-configurator --interactive --verbose --logfile ./aruba_config.log
+   aruba-ssid-manager --interactive --verbose --logfile ./aruba_config.log
    ```
 
 4. **Check File Permissions**
@@ -267,28 +267,28 @@ ERROR - Failed to execute command or received unexpected prompt
 
 1. **Use Unbuffered Python**
    ```bash
-   python -m aruba_ssid_configurator --interactive
+   python -m aruba_ssid_manager --interactive
    ```
 
 2. **Clear Terminal**
    ```bash
    clear
-   aruba-ssid-configurator --interactive
+   aruba-ssid-manager --interactive
    ```
 
 3. **Test with Verbose Output**
    ```bash
-   aruba-ssid-configurator --interactive --verbose
+   aruba-ssid-manager --interactive --verbose
    ```
 
 4. **Check Arguments Parsing**
    If some arguments provided, script might not go interactive:
    ```bash
    # This won't be interactive (all args provided)
-   aruba-ssid-configurator --host 10.0.0.1 --username admin
+   aruba-ssid-manager --host 10.0.0.1 --username admin
 
    # This WILL be interactive (missing args)
-   aruba-ssid-configurator --host 10.0.0.1
+   aruba-ssid-manager --host 10.0.0.1
    ```
 
 ---
@@ -418,14 +418,14 @@ ModuleNotFoundError: No module named 'pexpect'
 4. **Use Specific Python Version**
    ```bash
    python3.11 -m pip install -e .
-   python3.11 -m aruba_ssid_configurator --interactive
+   python3.11 -m aruba_ssid_manager --interactive
    ```
 
 5. **Activate Virtualenv**
    ```bash
    source venv/bin/activate
    pip install -e .
-   aruba-ssid-configurator --interactive
+   aruba-ssid-manager --interactive
    ```
 
 ---
@@ -446,7 +446,7 @@ Upgrade Python to 3.9 or higher:
 ```bash
 python --version
 # Should show 3.9.x or higher
-python3.11 -m aruba_ssid_configurator --interactive
+python3.11 -m aruba_ssid_manager --interactive
 ```
 
 ---
@@ -470,12 +470,12 @@ python3.11 -m aruba_ssid_configurator --interactive
 1. **Disable Verbose Logging if Not Needed**
    ```bash
    # Remove --verbose flag
-   aruba-ssid-configurator --interactive
+   aruba-ssid-manager --interactive
    ```
 
 2. **Use Smaller Logfile**
    ```bash
-   aruba-ssid-configurator --interactive --logfile /tmp/aruba.log
+   aruba-ssid-manager --interactive --logfile /tmp/aruba.log
    ```
 
 3. **Implement Log Rotation**
@@ -497,7 +497,7 @@ python3.11 -m aruba_ssid_configurator --interactive
 
 Always include `--verbose` flag when troubleshooting:
 ```bash
-aruba-ssid-configurator --interactive --verbose --logfile debug.log
+aruba-ssid-manager --interactive --verbose --logfile debug.log
 ```
 
 ### Capture Full SSH Session
@@ -540,7 +540,7 @@ log stream --predicate 'process == "ssh"'
 
 2. **Enable Verbose Logging**
    ```bash
-   aruba-ssid-configurator --interactive --verbose
+   aruba-ssid-manager --interactive --verbose
    ```
 
 3. **Consult contributing.md**

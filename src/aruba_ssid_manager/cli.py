@@ -1,4 +1,4 @@
-"""Command-line interface for Aruba SSID Configurator."""
+"""Command-line interface for Aruba SSID Manager."""
 
 from __future__ import annotations
 

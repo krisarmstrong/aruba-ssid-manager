@@ -1,4 +1,4 @@
-"""Core functionality for Aruba SSID configuration via SSH."""
+"""Core functionality for Aruba SSID Manager's SSH-based configuration."""
 
 from __future__ import annotations
 
@@ -9,7 +9,7 @@ from typing import Any, Dict
 
 import pexpect
 
-__version__ = "1.1.1"
+__version__ = "1.2.0"
 
 
 def setup_logging(verbose: bool, logfile: str | None = None) -> None:

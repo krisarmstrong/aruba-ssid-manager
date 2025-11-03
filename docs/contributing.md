@@ -1,6 +1,6 @@
 # Contributing Guide
 
-Welcome to the Aruba SSID Configurator project! We appreciate your interest in contributing. This guide outlines the process for contributing code, documentation, and bug reports.
+Welcome to the Aruba SSID Manager project! We appreciate your interest in contributing. This guide outlines the process for contributing code, documentation, and bug reports.
 
 ## Code of Conduct
 
@@ -20,8 +20,8 @@ This project adheres to a Code of Conduct that all contributors are expected to 
    ```bash
    # Create a personal fork on GitHub
    # Then clone it locally
-   git clone https://github.com/YOUR_USERNAME/aruba_ssid_configurator_py3.git
-   cd aruba_ssid_configurator_py3
+git clone https://github.com/YOUR_USERNAME/aruba-ssid-manager.git
+cd aruba-ssid-manager
    ```
 
 2. **Create a Virtual Environment**
@@ -39,7 +39,7 @@ This project adheres to a Code of Conduct that all contributors are expected to 
 4. **Verify Setup**
    ```bash
    python -m pytest tests/
-   aruba-ssid-configurator --help
+   aruba-ssid-manager --help
    ```
 
 ## Development Workflow
@@ -106,13 +106,13 @@ def your_function(param: str, count: int = 10) -> Dict[str, Any]:
 python -m pytest tests/ -v
 
 # Run with coverage
-python -m pytest tests/ --cov=aruba_ssid_configurator --cov-report=html
+python -m pytest tests/ --cov=aruba_ssid_manager --cov-report=html
 ```
 
 Example test:
 ```python
 def test_your_feature():
-    from aruba_ssid_configurator import your_function
+    from aruba_ssid_manager import your_function
     result = your_function("test")
     assert result is not None
     assert isinstance(result, dict)
@@ -251,7 +251,7 @@ Allow comma-separated VLAN IDs or multiple --vlan arguments
 
 ## Example
 ```bash
-aruba-ssid-configurator --host 10.0.0.1 \
+aruba-ssid-manager --host 10.0.0.1 \
   --ssid MultiVLAN --vlan 10,20,30 --wlan-profile default
 ```
 ```
@@ -307,23 +307,17 @@ aruba-ssid-configurator --host 10.0.0.1 \
 ## Project Structure
 
 ```
-aruba_ssid_configurator_py3/
+aruba-ssid-manager/
 ├── docs/                         # Architecture, API, deployment, troubleshooting
 ├── scripts/                      # Automation helpers (smoke tests)
 ├── src/
-│   └── aruba_ssid_configurator/  # Library + CLI package
+│   └── aruba_ssid_manager/       # Library + CLI package
 ├── tests/                        # Pytest suite
-├── CHANGELOG.md
-├── pyproject.toml
-└── README.md
-│   └── contributing.md          # This file
-├── scripts/
-│   └── [utility scripts]
-├── README.md                    # Project overview
-├── CHANGELOG.md                 # Version history
-├── LICENSE                      # MIT License
-├── CODE_OF_CONDUCT.md          # Contributor covenant
-└── .gitignore                  # Git ignore rules
+│   └── test_aruba_ssid_manager.py
+├── CHANGELOG.md                  # Release history
+├── LICENSE                       # MIT License
+├── pyproject.toml                # Packaging metadata
+└── README.md                     # Project overview
 ```
 
 ## Documentation Standards
@@ -394,13 +388,13 @@ output_here
 ### Test File Location
 ```
 tests/
-└── test_aruba-ssid-configurator
+└── test_aruba-ssid-manager
 ```
 
 ### Test Structure
 ```python
 import pytest
-from aruba_ssid_configurator import function_to_test
+from aruba_ssid_manager import function_to_test
 
 def test_function_basic():
     """Test basic functionality."""
@@ -424,13 +418,13 @@ def test_function_error_handling():
 python -m pytest tests/ -v
 
 # Run specific test
-python -m pytest tests/test_aruba_ssid_configurator::test_function_name -v
+python -m pytest tests/test_aruba_ssid_manager::test_function_name -v
 
 # Run with coverage
-python -m pytest tests/ --cov=aruba_ssid_configurator
+python -m pytest tests/ --cov=aruba_ssid_manager
 
 # Run with coverage report
-python -m pytest tests/ --cov=aruba_ssid_configurator --cov-report=html
+python -m pytest tests/ --cov=aruba_ssid_manager --cov-report=html
 ```
 
 ## Versioning
@@ -442,7 +436,7 @@ The project uses Semantic Versioning (MAJOR.MINOR.PATCH):
 - **PATCH**: Bug fixes
 
 Update version in:
-1. `aruba-ssid-configurator` - `__version__` variable
+1. `aruba-ssid-manager` - `__version__` variable
 
 Or use the version bumper:
 ```bash

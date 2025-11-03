@@ -26,8 +26,8 @@
 ### 1. Clone Repository
 
 ```bash
-git clone https://github.com/your-org/aruba_ssid_configurator_py3.git
-cd aruba_ssid_configurator_py3
+git clone https://github.com/your-org/aruba-ssid-manager.git
+cd aruba-ssid-manager
 ```
 
 ### 2. Install Dependencies
@@ -36,18 +36,18 @@ cd aruba_ssid_configurator_py3
 pip install -e .
 ```
 
-The requirements.txt contains:
-- `pexpect>=4.8` - SSH session automation
+The editable install pulls in required dependencies such as:
+- `pexpect>=4.8` – SSH session automation
 
 ### 3. Verify Installation
 
 ```bash
-aruba-ssid-configurator --help
+aruba-ssid-manager --help
 ```
 
 Expected output:
 ```
-usage: aruba-ssid-configurator [-h] [--host HOST] [--username USERNAME]
+usage: aruba-ssid-manager [-h] [--host HOST] [--username USERNAME]
                                   [--password PASSWORD] [--ssid SSID] ...
 ```
 
@@ -57,13 +57,13 @@ usage: aruba-ssid-configurator [-h] [--host HOST] [--username USERNAME]
 
 #### Option 1: Direct Execution
 ```bash
-aruba-ssid-configurator --host 10.0.0.1 --username admin \
+aruba-ssid-manager --host 10.0.0.1 --username admin \
   --password mypassword --ssid MySSID --vlan 10 --wlan-profile default
 ```
 
 #### Option 2: Interactive Mode
 ```bash
-aruba-ssid-configurator --interactive
+aruba-ssid-manager --interactive
 ```
 
 #### Option 3: Scheduled Execution (Cron)
@@ -78,7 +78,7 @@ SSID="GuestNetwork"
 VLAN="20"
 WLAN_PROFILE="guest"
 
-python -m aruba_ssid_configurator \
+python -m aruba_ssid_manager \
   --host "$HOST" \
   --username "$USERNAME" \
   --password "$PASSWORD" \
@@ -98,12 +98,12 @@ chmod +x /etc/aruba/config.sh
 Create `/etc/systemd/system/aruba-config.service`:
 ```ini
 [Unit]
-Description=Aruba SSID Configurator
+Description=Aruba SSID Manager
 After=network.target
 
 [Service]
 Type=oneshot
-ExecStart=/usr/bin/python3 /opt/aruba/aruba-ssid-configurator \
+ExecStart=/usr/bin/python3 /opt/aruba/aruba-ssid-manager \
   --host 10.0.0.1 --username admin --password pass \
   --ssid MySSID --vlan 10 --wlan-profile default
 StandardOutput=journal
@@ -130,17 +130,17 @@ sudo systemctl start aruba-config.service
 
 #### Console Logging
 ```bash
-aruba-ssid-configurator --interactive --verbose
+aruba-ssid-manager --interactive --verbose
 ```
 
 #### File Logging
 ```bash
-aruba-ssid-configurator --interactive --logfile /var/log/aruba_config.log
+aruba-ssid-manager --interactive --logfile /var/log/aruba_config.log
 ```
 
 #### Both Console and File
 ```bash
-aruba-ssid-configurator --interactive --verbose --logfile /var/log/aruba_config.log
+aruba-ssid-manager --interactive --verbose --logfile /var/log/aruba_config.log
 ```
 
 ## Credential Management
@@ -159,7 +159,7 @@ export ARUBA_SSID="MyNetwork"
 export ARUBA_VLAN="10"
 export ARUBA_WLAN_PROFILE="default"
 
-aruba-ssid-configurator \
+aruba-ssid-manager \
   --host "$ARUBA_HOST" \
   --username "$ARUBA_USERNAME" \
   --password "$ARUBA_PASSWORD" \
@@ -178,7 +178,7 @@ Use tools like:
 
 Example with pass:
 ```bash
-aruba-ssid-configurator \
+aruba-ssid-manager \
   --host 10.0.0.1 \
   --username admin \
   --password "$(pass show aruba/admin_password)" \
@@ -188,7 +188,7 @@ aruba-ssid-configurator \
 #### Option 3: Interactive Prompt (Most Secure)
 
 ```bash
-aruba-ssid-configurator --interactive
+aruba-ssid-manager --interactive
 ```
 
 The password is masked during input and never echoed to terminal.
@@ -199,7 +199,7 @@ The password is masked during input and never echoed to terminal.
 
 ```bash
 #!/bin/bash
-aruba-ssid-configurator \
+aruba-ssid-manager \
   --host 192.168.1.100 \
   --username netadmin \
   --password "$(pass show work/aruba)" \
@@ -219,7 +219,7 @@ PASSWORD="$(pass show aruba/admin)"
 
 for CONTROLLER in "${CONTROLLERS[@]}"; do
     echo "Configuring $CONTROLLER..."
-    aruba-ssid-configurator \
+    aruba-ssid-manager \
       --host "$CONTROLLER" \
       --username "$USERNAME" \
       --password "$PASSWORD" \
@@ -238,7 +238,7 @@ done
   tasks:
     - name: Run SSID configurator
       command: |
-        python -m aruba_ssid_configurator
+        python -m aruba_ssid_manager
         --host {{ inventory_hostname }}
         --username {{ aruba_admin_user }}
         --password {{ aruba_admin_password }}
@@ -258,9 +258,9 @@ FROM python:3.11-slim
 WORKDIR /app
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
-COPY aruba-ssid-configurator .
+COPY aruba-ssid-manager .
 
-ENTRYPOINT ["python", "aruba-ssid-configurator"]
+ENTRYPOINT ["python", "aruba-ssid-manager"]
 ```
 
 Build and run:
@@ -288,7 +288,7 @@ docker run --rm aruba-ssid-config \
 
 2. **Test Script in Dry Run (if available)**
    ```bash
-   aruba-ssid-configurator --interactive --verbose
+   aruba-ssid-manager --interactive --verbose
    # Verify all prompts and parameters
    ```
 
@@ -387,7 +387,7 @@ grep -i "critical\|error" /var/log/aruba_config.log | \
 
 1. **File Permissions**
    ```bash
-   chmod 700 aruba-ssid-configurator
+   chmod 700 aruba-ssid-manager
    chmod 600 /etc/aruba/config.sh
    chmod 640 /var/log/aruba_config.log
    ```
