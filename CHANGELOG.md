@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.1.0] - 2025-11-03
+- Migrated project to a modern `src/` package layout with consistent naming.
+- Added `pyproject.toml` packaging metadata and console entry point `aruba-ssid-configurator`.
+- Introduced reusable CLI module and backward-compatible script shim.
+- Refreshed documentation, tests, and tooling for the new structure.
+
 ## [1.0.0] - Major Release
 - Bumped version to 1.0.0 for first stable release
 - Refactored to `aruba_ssid_configurator.py`

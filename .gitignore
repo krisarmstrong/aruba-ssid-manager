@@ -1,7 +1,12 @@
-
 .DS_Store
-<<<<<<< HEAD
-=======
-.DS_Store
-.DS_Store
->>>>>>> fc3844d (updates)
+__pycache__/
+.pytest_cache/
+.venv/
+venv/
+env/
+*.pyc
+*.pyo
+build/
+dist/
+*.egg-info/
+.pyc-cache/
