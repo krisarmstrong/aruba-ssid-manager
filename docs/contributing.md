@@ -308,16 +308,14 @@ aruba-ssid-configurator --host 10.0.0.1 \
 
 ```
 aruba_ssid_configurator_py3/
-├── aruba-ssid-configurator  # Main application
-├── version_bumper.py            # Version management utility
-├── requirements.txt             # Project dependencies
-├── tests/
-│   └── test_aruba-ssid-configurator  # Test suite
-├── docs/
-│   ├── architecture.md          # System architecture
-│   ├── api.md                   # API reference
-│   ├── deployment.md            # Deployment guide
-│   ├── troubleshooting.md       # Troubleshooting guide
+├── docs/                         # Architecture, API, deployment, troubleshooting
+├── scripts/                      # Automation helpers (smoke tests)
+├── src/
+│   └── aruba_ssid_configurator/  # Library + CLI package
+├── tests/                        # Pytest suite
+├── CHANGELOG.md
+├── pyproject.toml
+└── README.md
 │   └── contributing.md          # This file
 ├── scripts/
 │   └── [utility scripts]
@@ -445,11 +443,9 @@ The project uses Semantic Versioning (MAJOR.MINOR.PATCH):
 
 Update version in:
 1. `aruba-ssid-configurator` - `__version__` variable
-2. `version_bumper.py` - `__version__` variable
 
 Or use the version bumper:
 ```bash
-python version_bumper.py -t patch -c -g
 ```
 
 ## Common Mistakes to Avoid

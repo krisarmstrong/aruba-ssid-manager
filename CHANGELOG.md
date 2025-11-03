@@ -1,5 +1,9 @@
 # Changelog
 
+## [1.1.1] - 2025-11-03
+- Removed legacy `version_bumper.py` helper in favor of Git-managed version tags.
+- Updated documentation and tests to reflect the simplified release process.
+
 ## [1.1.0] - 2025-11-03
 - Migrated project to a modern `src/` package layout with consistent naming.
 - Added `pyproject.toml` packaging metadata and console entry point `aruba-ssid-configurator`.
