@@ -21,3 +21,11 @@ aruba-ssid-manager = "aruba_ssid_manager.cli:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]
+
+[tool.ruff]
+line-length = 100
+extend-exclude = ["build", "dist", ".venv", "venv", ".tox", ".mypy_cache", ".ruff_cache"]
+
+[tool.black]
+line-length = 100
+

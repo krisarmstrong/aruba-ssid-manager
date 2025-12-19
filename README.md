@@ -1,4 +1,6 @@
 # Aruba SSID Manager
+[![Checks](https://github.com/krisarmstrong/aruba-ssid-manager/actions/workflows/checks.yml/badge.svg)](https://github.com/krisarmstrong/aruba-ssid-manager/actions/workflows/checks.yml)
+
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE) [![PyPI](https://img.shields.io/pypi/v/aruba-ssid-manager)]() [![Python](https://img.shields.io/pypi/pyversions/aruba-ssid-manager)]()
 
@@ -39,3 +41,12 @@ pyproject.toml             Packaging metadata
 
 ## License
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Development
+
+Run the full local checks:
+
+```bash
+./check.sh
+```
+

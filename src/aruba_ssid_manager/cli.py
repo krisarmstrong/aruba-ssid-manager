@@ -60,7 +60,9 @@ def main(argv: Sequence[str] | None = None) -> int:
     args = parse_arguments(argv)
     setup_logging(args.verbose, args.logfile)
 
-    if args.interactive or not all([args.host, args.username, args.password, args.ssid, args.vlan, args.wlan_profile]):
+    if args.interactive or not all(
+        [args.host, args.username, args.password, args.ssid, args.vlan, args.wlan_profile]
+    ):
         params = interactive_input()
     else:
         params = _build_params(args)
