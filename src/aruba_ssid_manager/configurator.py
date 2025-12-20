@@ -9,7 +9,7 @@ from typing import Any, Dict
 
 import pexpect
 
-__version__ = "1.2.0"
+__version__ = "1.2.2"
 
 
 def setup_logging(verbose: bool, logfile: str | None = None) -> None:

@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "aruba-ssid-manager"
-version = "1.2.1"
+version = "1.2.2"
 description = "Configure visible or hidden SSIDs on an Aruba controller via SSH."
 readme = "README.md"
 requires-python = ">=3.9"
@@ -24,8 +24,8 @@ where = ["src"]
 
 [tool.ruff]
 line-length = 100
-extend-exclude = ["build", "dist", ".venv", "venv", ".tox", ".mypy_cache", ".ruff_cache"]
+extend-exclude = ["build", "dist", ".venv", "venv", ".tox", ".mypy_cache", ".ruff_cache", "archive"]
 
 [tool.black]
 line-length = 100
-
+extend-exclude = "archive"

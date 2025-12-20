@@ -1,5 +1,9 @@
 # Changelog
 
+## [1.2.2] - 2025-12-20
+- Excluded legacy archive files from lint/format passes to keep CI clean.
+- Bumped version references across code, tests, and documentation.
+
 ## [1.2.0] - 2025-11-03
 - Renamed the project to **Aruba SSID Manager** with package import `aruba_ssid_manager` and CLI `aruba-ssid-manager`.
 - Restructured the source tree, documentation, and tooling to use the new naming.

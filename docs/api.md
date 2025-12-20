@@ -197,7 +197,7 @@ if __name__ == "__main__":
 Semantic version string for the application.
 
 **Type:** `str`
-**Value:** `"1.2.0"`
+**Value:** `"1.2.2"`
 **Usage:** Reference in version checking and automated version updates
 
 ---
