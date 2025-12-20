@@ -10,3 +10,15 @@ build/
 dist/
 *.egg-info/
 .pyc-cache/
+
+# Tooling defaults
+*.log
+.env
+.env.*
+.mypy_cache/
+.ruff_cache/
+.coverage
+coverage.xml
+.eggs/
+.tox/
+.nox/

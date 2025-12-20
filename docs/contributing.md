@@ -435,12 +435,8 @@ The project uses Semantic Versioning (MAJOR.MINOR.PATCH):
 - **MINOR**: New features (backward compatible)
 - **PATCH**: Bug fixes
 
-Update version in:
-1. `aruba-ssid-manager` - `__version__` variable
-
-Or use the version bumper:
-```bash
-```
+Version updates are automated via release-please from Conventional Commits.
+No manual version edits are required; focus on clear commit messages.
 
 ## Common Mistakes to Avoid
 
