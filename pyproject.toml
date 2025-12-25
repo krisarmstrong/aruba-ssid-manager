@@ -21,7 +21,7 @@ dependencies = [
 aruba-ssid-manager = "aruba_ssid_manager.cli:main"
 
 [tool.setuptools.packages.find]
-where = ["src"]
+where = ["."]
 
 [tool.ruff]
 line-length = 100
