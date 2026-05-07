@@ -1,24 +1,73 @@
-.DS_Store
+# ╔═══════════════════════════════════════════════════════════════════════════╗
+# ║ Aruba SSID Manager - .gitignore                                           ║
+# ╠═══════════════════════════════════════════════════════════════════════════╣
+# ║ Configure visible or hidden SSIDs on Aruba controllers via SSH            ║
+# ║ Stack: Python 3.x, SSH automation                                         ║
+# ╚═══════════════════════════════════════════════════════════════════════════╝
+
+# ─── Python Core ─────────────────────────────────────────────────────────────
 __pycache__/
-.pytest_cache/
+*.py[cod]
+*$py.class
+*.pyc
+*.pyo
+*.pyd
+
+# ─── Virtual Environments ────────────────────────────────────────────────────
 .venv/
 venv/
 env/
-*.pyc
-*.pyo
+ENV/
+env.bak/
+venv.bak/
+.Python
+
+# ─── Distribution & Packaging ────────────────────────────────────────────────
 build/
 dist/
 *.egg-info/
-.pyc-cache/
-
-# Tooling defaults
-*.log
-.env
-.env.*
-.mypy_cache/
-.ruff_cache/
-.coverage
-coverage.xml
 .eggs/
+*.egg
+MANIFEST
+
+# ─── Testing & Coverage ──────────────────────────────────────────────────────
+.pytest_cache/
+.coverage
+.coverage.*
+coverage.xml
+htmlcov/
 .tox/
 .nox/
+.hypothesis/
+
+# ─── Type Checking & Linting ─────────────────────────────────────────────────
+.mypy_cache/
+.ruff_cache/
+.dmypy.json
+dmypy.json
+.pytype/
+
+# ─── Documentation ───────────────────────────────────────────────────────────
+docs/_build/
+/site
+
+# ─── Environment & Secrets ───────────────────────────────────────────────────
+.env
+.env.*
+.env.local
+
+# SSH credentials (never commit)
+*.key
+*.pem
+aruba_credentials.json
+controller_passwords.txt
+
+# ─── Logs ────────────────────────────────────────────────────────────────────
+*.log
+aruba_ssid_manager.log
+
+# ─── Temporary Files ─────────────────────────────────────────────────────────
+*.tmp
+*.temp
+*~
+.tmp_*
