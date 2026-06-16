@@ -5,7 +5,7 @@ from __future__ import annotations
 import getpass
 import logging
 import sys
-from typing import Any, Dict
+from typing import Any
 
 import pexpect
 
@@ -38,7 +38,7 @@ def setup_logging(verbose: bool, logfile: str | None = None) -> None:
         logger.addHandler(file_handler)
 
 
-def interactive_input() -> Dict[str, Any]:
+def interactive_input() -> dict[str, Any]:
     """
     Prompt user for parameters in interactive mode.
 
@@ -63,7 +63,7 @@ def interactive_input() -> Dict[str, Any]:
     }
 
 
-def configure_ssid(params: Dict[str, Any]) -> None:
+def configure_ssid(params: dict[str, Any]) -> None:
     """
     Connect via SSH and configure the specified SSID.
 
