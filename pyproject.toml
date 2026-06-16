@@ -22,11 +22,14 @@ aruba-ssid-manager = "aruba_ssid_manager.cli:main"
 
 [tool.setuptools.packages.find]
 where = ["."]
+include = ["aruba_ssid_manager*"]
 
 [tool.ruff]
 line-length = 100
 extend-exclude = ["build", "dist", ".venv", "venv", ".tox", ".mypy_cache", ".ruff_cache", "archive"]
 
-[tool.black]
-line-length = 100
-extend-exclude = "archive"
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+line-ending = "lf"
+docstring-code-format = true

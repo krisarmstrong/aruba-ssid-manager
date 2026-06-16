@@ -5,7 +5,8 @@ from __future__ import annotations
 import argparse
 import logging
 import sys
-from typing import Any, Dict, Sequence
+from collections.abc import Sequence
+from typing import Any
 
 from .configurator import configure_ssid, interactive_input, setup_logging
 
@@ -34,7 +35,7 @@ def parse_arguments(argv: Sequence[str] | None = None) -> argparse.Namespace:
     return parser.parse_args(argv)
 
 
-def _build_params(args: argparse.Namespace) -> Dict[str, Any]:
+def _build_params(args: argparse.Namespace) -> dict[str, Any]:
     """Return parameter mapping from parsed arguments."""
     return {
         "host": args.host,
@@ -72,7 +73,7 @@ def main(argv: Sequence[str] | None = None) -> int:
     except KeyboardInterrupt:
         logging.info("Operation cancelled by user.")
         return 0
-    except Exception as exc:  # noqa: BLE001 broad to surface CLI errors
+    except Exception as exc:
         logging.critical("Fatal error configuring SSID: %s", exc)
         return 1
 

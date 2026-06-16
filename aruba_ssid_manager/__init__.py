@@ -1,13 +1,13 @@
 """Public package interface for Aruba SSID Manager."""
 
-from .configurator import configure_ssid, interactive_input, setup_logging, __version__
 from .cli import main, parse_arguments
+from .configurator import __version__, configure_ssid, interactive_input, setup_logging
 
 __all__ = [
+    "__version__",
     "configure_ssid",
     "interactive_input",
-    "setup_logging",
-    "parse_arguments",
     "main",
-    "__version__",
+    "parse_arguments",
+    "setup_logging",
 ]
