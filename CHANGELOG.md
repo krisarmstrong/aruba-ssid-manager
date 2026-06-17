@@ -5,6 +5,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.2.4](https://github.com/krisarmstrong/aruba-ssid-manager/compare/v1.2.3...v1.2.4) (2026-06-17)
+
+
+### Bug Fixes
+
+* **ci:** add missing noxfile and correct matrix python-version ([#9](https://github.com/krisarmstrong/aruba-ssid-manager/issues/9)) ([73b645a](https://github.com/krisarmstrong/aruba-ssid-manager/commit/73b645a9a38031db6daa8a318a2cbf5b3765fe3a))
+* **ci:** pin release-please action commit ([#18](https://github.com/krisarmstrong/aruba-ssid-manager/issues/18)) ([8b7277b](https://github.com/krisarmstrong/aruba-ssid-manager/commit/8b7277b1bc7a72b18d08e956275e1469f7cfc05b))
+
 ## [Unreleased]
 
 ## [1.2.3] - 2024-12-24
